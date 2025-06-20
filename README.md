@@ -4,8 +4,6 @@
 
 Frontend client application for the eTravelly hotel booking system, built with Angular.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli).
-
 ## 🚀 Features
 - User-friendly UI for searching hotels and room types
 - Display available rooms with pricing and availability status
