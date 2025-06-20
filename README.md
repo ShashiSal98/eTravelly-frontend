@@ -1,5 +1,7 @@
 # eTravelly-Frontend
 
+![eTravelly](https://github.com/user-attachments/assets/aaa67a2d-64ce-491a-91d6-d1a1a297bc2e)
+
 Frontend client application for the eTravelly hotel booking system, built with Angular.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
