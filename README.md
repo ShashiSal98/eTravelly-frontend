@@ -2,7 +2,7 @@
 
 ![eTravelly](https://github.com/user-attachments/assets/aaa67a2d-64ce-491a-91d6-d1a1a297bc2e)
 
-Frontend client application for the eTravelly hotel booking system, built with Angular.
+Frontend client application for the eTravelly travel agancy system that allows users to search available hotel rooms, built with Angular.
 
 ## 🚀 Features
 - User-friendly UI for searching hotels and room types
