@@ -1,0 +1,95 @@
+<!-- src/app/room-type/room-type.component.html -->
+<div class="container">
+  <h2>Room Type Management</h2>
+
+<form (ngSubmit)="createRoomType()" class="room-type-form">
+
+  <div class="form-group">
+    <label>Room Type Name:</label>
+    <input type="text" [(ngModel)]="newRoomType.roomTypeName" name="roomTypeName" required />
+  </div>
+
+  <div class="form-group">
+    <label>Price Per Person/Night:</label>
+    <input type="number" [(ngModel)]="newRoomType.pricePerPersonPerNight" name="price" required />
+  </div>
+
+  <div class="form-group">
+    <label>Total Rooms:</label>
+    <input type="number" [(ngModel)]="newRoomType.totalRooms" name="totalRooms" required />
+  </div>
+
+  <div class="form-group">
+    <label>Max Adults:</label>
+    <input type="number" [(ngModel)]="newRoomType.maxAdults" name="maxAdults" required />
+  </div>
+
+  <div class="form-group">
+    <label>Contract ID:</label>
+    <input type="number" [(ngModel)]="newRoomType.contractId" name="contractId" required />
+  </div>
+
+  <button type="submit" class="submit-btn">Create Room Type</button>
+</form>
+
+
+  <p>{{ message }}</p>
+
+  <hr />
+
+  <h3>Room Type List</h3>
+
+  <table mat-table [dataSource]="roomTypes" class="mat-elevation-z2 room-type-table">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let room">{{ room.id }}</td>
+    </ng-container>
+
+    <!-- Room Type Name Column -->
+    <ng-container matColumnDef="roomTypeName">
+      <th mat-header-cell *matHeaderCellDef>Room Type</th>
+      <td mat-cell *matCellDef="let room">{{ room.roomTypeName }}</td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="pricePerPersonPerNight">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let room">{{ room.pricePerPersonPerNight | currency }}</td>
+    </ng-container>
+
+    <!-- Total Rooms Column -->
+    <ng-container matColumnDef="totalRooms">
+      <th mat-header-cell *matHeaderCellDef>Total Rooms</th>
+      <td mat-cell *matCellDef="let room">{{ room.totalRooms }}</td>
+    </ng-container>
+
+    <!-- Max Adults Column -->
+    <ng-container matColumnDef="maxAdults">
+      <th mat-header-cell *matHeaderCellDef>Max Adults</th>
+      <td mat-cell *matCellDef="let room">{{ room.maxAdults }}</td>
+    </ng-container>
+
+    <!-- Contract ID Column -->
+    <ng-container matColumnDef="contractId">
+      <th mat-header-cell *matHeaderCellDef>Contract ID</th>
+      <td mat-cell *matCellDef="let room">{{ room.contractId }}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let room">
+        <button mat-icon-button color="warn" matTooltip="Delete Room Type" (click)="deleteRoomType(room.id!)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Header and Row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>

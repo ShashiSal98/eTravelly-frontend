@@ -1,1 +1,210 @@
-/* You can add global styles to this file, and also import other style files */
+:host {
+  display: block;
+  max-width: 700px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  background: #f7f9fc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1f4068;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #34495e;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+/* Filter input and button */
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  color: #34495e;
+}
+
+input[type='number'],
+input[type='text'] {
+  padding: 10px 15px;
+  margin: 8px 12px 20px 0;
+  border: 2px solid #d0d7de;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 160px;
+  transition: border-color 0.3s ease;
+  outline-offset: 2px;
+}
+
+input[type='number']:focus,
+input[type='text']:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 6px #3498dbaa;
+}
+
+/* Buttons */
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(52, 152, 219, 0.3);
+  transition: all 0.25s ease;
+  margin-right: 10px;
+  user-select: none;
+}
+
+button:hover {
+  background-color: #2980b9;
+  box-shadow: 0 8px 20px rgba(41, 128, 185, 0.4);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Cancel button */
+button[type='button'] {
+  background-color: green;
+  box-shadow: 0 5px 12px rgba(60, 231, 177, 0.3);
+}
+
+button[type='button']:hover {
+  background-color: rgb(12, 160, 12);
+  box-shadow: 0 5px 12px rgba(60, 231, 177, 0.3);
+}
+
+/* Room types list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+li {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-bottom: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #eaf4fc;
+}
+
+li strong {
+  font-weight: 700;
+  color: #2c3e50;
+  min-width: 140px;
+}
+
+/* Form */
+form {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+form input {
+  flex: 1 1 180px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #d0d7de;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 8px #3498dbaa;
+}
+
+/* Submit buttons aligned on bottom */
+form button {
+  align-self: flex-end;
+  min-width: 100px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100% !important;
+  }
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center; /* centers cards horizontally */
+}
+
+.room-card {
+  width: calc(50% - 16px); /* half the container width minus gap */
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .room-card {
+    width: 100%; /* On small screens, stack in one column */
+  }
+}
+
+.room-card:hover {
+  transform: scale(1.05);
+}
+
+.available-rooms-title {
+  color: rgb(206, 213, 214);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-top: 4px;
+}
+.success-snackbar {
+  background-color: #4caf50 !important;  /* Green */
+  color: white !important;
+}
+
+.error-snackbar {
+  background-color: #f44336 !important;  /* Red */
+  color: white !important;
+}

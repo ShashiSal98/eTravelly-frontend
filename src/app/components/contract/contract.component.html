@@ -1,0 +1,72 @@
+<!-- src/app/contract/contract.component.html -->
+<div class="container">
+  <h2>Contract Management</h2>
+
+  <form (ngSubmit)="createContract()">
+   
+
+      <div class="form-group">
+        <label for="hotelId">Hotel ID:</label>
+        <input type="number" id="hotelId" [(ngModel)]="newContract.hotelId" name="hotelId" required />
+      </div>
+
+      <div class="form-group">
+        <label for="validFrom">Valid From:</label>
+        <input type="date" id="validFrom" [(ngModel)]="newContract.validFrom" name="validFrom" required />
+      </div>
+
+      <div class="form-group">
+        <label for="validTo">Valid To:</label>
+        <input type="date" id="validTo" [(ngModel)]="newContract.validTo" name="validTo" required />
+      </div>
+
+      <button type="submit">Create Contract</button>
+  </form>
+
+  <p>{{ message }}</p>
+
+  <hr />
+
+  <h3>Contracts List</h3>
+<table mat-table [dataSource]="contracts" class="mat-elevation-z2 contract-table">
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Contract ID</th>
+    <td mat-cell *matCellDef="let contract">{{ contract.id }}</td>
+  </ng-container>
+
+  <!-- Hotel ID Column -->
+  <ng-container matColumnDef="hotelId">
+    <th mat-header-cell *matHeaderCellDef>Hotel ID</th>
+    <td mat-cell *matCellDef="let contract">{{ contract.hotelId }}</td>
+  </ng-container>
+
+  <!-- Valid From Column -->
+  <ng-container matColumnDef="validFrom">
+    <th mat-header-cell *matHeaderCellDef>Valid From</th>
+    <td mat-cell *matCellDef="let contract">{{ contract.validFrom | date:'yyyy-MM-dd' }}</td>
+  </ng-container>
+
+  <!-- Valid To Column -->
+  <ng-container matColumnDef="validTo">
+    <th mat-header-cell *matHeaderCellDef>Valid To</th>
+    <td mat-cell *matCellDef="let contract">{{ contract.validTo | date:'yyyy-MM-dd' }}</td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let contract">
+      <button mat-icon-button color="warn" (click)="deleteContract(contract.id!)" matTooltip="Delete Contract">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <!-- Header & Row Rendering -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+</div>

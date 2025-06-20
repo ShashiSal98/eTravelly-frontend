@@ -1,0 +1,221 @@
+.header-main-section{
+    height: 60px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(163, 206, 206);
+    border-bottom: 2px solid #e4e4e4;  
+    box-shadow: 0px 0px 4px #e4e4e4;  
+}
+
+.header-main-left-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 20%;
+  background-color: #fff;
+  padding-left: 10px;
+}
+
+.header-main-right-section{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+}
+
+.header-main-left-img {
+    height: 60px;  
+    width: auto;  
+    background-color: white;
+    margin-left: 10px;
+}
+
+.header-main-right-menu-section{
+    display: flex;
+    gap: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.header-main-right-menu-item{
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-main-right-section-btn{
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to right, #ff5353 , #ff5353);
+    color: white;
+    cursor: pointer;
+}
+
+.header-main-right-menu-item-link{
+    font-size: 12px;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    color:black;
+}
+
+select{
+    font-size: 14px;
+    font-family:sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    color: #409a61;
+    border: none;
+    outline:0px;
+}
+
+option{
+    font-size: 14px;
+    font-family:sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    color: #409a61;
+    border: none;
+    outline:0px;
+}
+
+
+.subcategory-dropdown {
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: white;
+    font-family: sans-serif;
+     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80%;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color:black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; 
+    margin: 0; 
+  }
+  
+  .navbar a:hover,
+  .dropdown:hover .dropbtn {
+    /* background-color: #0d99ac; */
+    color: #0d99ac;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .fa {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  .dropdown-icon {
+    margin-left: 5px; 
+  }
+  .etravelly-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #094181; 
+      cursor: pointer;
+}
+.etravelly-name-link {
+  text-decoration: none;
+}
+
+/* Set base layout height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content fills the available height */
+router-outlet {
+  flex: 1;
+  display: block;
+}
+
+/* Footer styling */
+.app-footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: white;
+  color: #333;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-top: auto;
+}
